@@ -1,5 +1,5 @@
 class AddRequestingOrganizationToApplications < ActiveRecord::Migration[5.1]
   def change
-    add_column :applications, :requesting_organization, :string
+    add_reference :applications, :requesting_organization, index: true
   end
 end

@@ -34,7 +34,8 @@ ActiveRecord::Schema.define(version: 20171022115743) do
     t.text "strategy_of_getting_sponsors"
     t.text "planned_advertisement"
     t.text "current_state"
-    t.string "requesting_organization"
+    t.bigint "requesting_organization_id"
+    t.index ["requesting_organization_id"], name: "index_applications_on_requesting_organization_id"
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
 
